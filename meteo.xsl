@@ -3,26 +3,28 @@
   <xsl:template match="/">
     <html> 
       <body>
-        <table border="1">
-          <tr bgcolor="steelblue">
-            <th style="text-align:left">Heure</th>
-            <th style="text-align:left">Temperature</th>
-            <th style="text-align:left">Pluie</th>
-            <th style="text-align:left">Neige</th>
-          </tr>
+        
           <xsl:for-each select="previsions/echeance">
             <xsl:choose>
               <xsl:when test="position() &lt;= 8" >
-                <tr>
-                    <td><xsl:value-of select="substring(@timestamp,11,9)"/></td>
-                    <td><xsl:value-of select="concat(substring(temperature/level[@val='sol'] - 273, 0, 5), ' °C')"/></td>
-                    <td><xsl:value-of select="pluie"/></td>
-                    <td><xsl:value-of select="risque_neige"/></td>
-                </tr>
+                <div class="ui floating message centered row" style="height: 190px">
+
+                  <xsl:choose>
+                    <xsl:when test="pluie &gt;= 0.5">
+                      <img class="ui tiny image" src="img/rain.png" alt="rain"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <img class="ui tiny image" src="img/sun.png" alt="sun"/>                    
+                    </xsl:otherwise>
+                  </xsl:choose>
+
+                  <h3><xsl:value-of select="substring(@timestamp,12,5)"/></h3>
+                  <p><xsl:value-of select="concat(substring(temperature/level[@val='sol'] - 273, 0, 5), ' °C')"/></p>
+                </div>
               </xsl:when>
             </xsl:choose>
           </xsl:for-each>
-        </table>
+        
       </body>
     </html>
   </xsl:template>
