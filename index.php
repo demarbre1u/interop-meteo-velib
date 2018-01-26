@@ -13,7 +13,7 @@
 
 
     <body>
-        <div class="ui top fixed menu">
+        <div class="ui top fixed menu" style="z-index: 1">
             <div class="item">
                 <h1>Interopérabilité</h1>
             </div>        
@@ -57,7 +57,7 @@
                 ?>
             </div>
             
-            <div id="mapid" style="height: 600px; width: 60%; margin: auto;"></div>            
+            <div id="mapid" style="height: 600px; width: 60%; margin: auto; z-index: 0"></div>            
         </div>
 
         <script>
