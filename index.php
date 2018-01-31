@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>TD Interop</title>
+        <title>TD Interop - XML</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
             integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -15,7 +15,7 @@
     <body>
         <div class="ui top fixed menu" style="z-index: 1">
             <div class="item">
-                <h1>Interopérabilité</h1>
+                <h1>Interopérabilité - XML</h1>
             </div>        
         </div>
 
