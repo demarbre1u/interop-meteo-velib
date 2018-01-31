@@ -22,16 +22,19 @@
         <div class="ui grid" style="margin-top: 20px;">
             <div class="eight wide centered row">
                 <?php
-                    /*
-                    Pour le proxy de l'IUT, au besoin
-                    $opts = array('http' => array('proxy'=> 'tcp://127.0.0.1:8080', 'request_fulluri'=> true));
 
-                    $context = stream_context_create($opts);
-                    */
-
+                    $default_opts = array(
+                        'http'=>array(
+                            'proxy'=>"www-cache:3128",
+                            'request_fulluri'=>true
+                        )
+                    );
+                      
+                    $default = stream_context_set_default($default_opts);
+                    
                     // Par défaut, l'IP utilisé est l'IP courante
-                    $ip_link = "http://ip-api.com/xml";
-                    $ip_data = file_get_contents($ip_link);
+                    $ip_link = "http://ip-api.com/xml/";
+                    $ip_data = file_get_contents($ip_link, false, $default);
                     $ip_xml = simplexml_load_string($ip_data);
 
                     $lat_client = $ip_xml->xpath("lat")[0]->__toString();
