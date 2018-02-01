@@ -20,4 +20,4 @@ Il ne vous reste ensuite plus qu'à accéder à l'URL correspondante pour utilis
 
 ## Lien vers Webetu
 
-https://webetu.iutnc.univ-lorraine.fr/www/demarbre1u/interoperabilite/
+https://webetu.iutnc.univ-lorraine.fr/www/demarbre1u/interoperabilite/xml
